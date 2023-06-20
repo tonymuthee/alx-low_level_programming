@@ -4,7 +4,6 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include <unistd.h>
 /**
  * struct structprint - structure containing
  * @q: the location and method to translate data to characters.
@@ -18,10 +17,7 @@ typedef struct structprint
   int (*u)(char *format, va_list);
 } structype;
 
-int _putchar(char c)
-{
-    return write(1, &c, 1); /* Implement the function to write a single character to the standard output */
-};
+int _putchar(char c);
 void print_alphabet(void);
 void print_alphabet_x10(void);
 int print_sign(int n);
