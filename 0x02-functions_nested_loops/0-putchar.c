@@ -1,12 +1,16 @@
-#include <main.h>
+#include "main.h"
 /**
- * main - Prints "_putchar" followed by a new line.
+ * main - Prints followed by a new line.
  *
- * Return: Always 0.
+ * Return: Always 0
  */
 int main(void)
 {
-	_putchar('_');
-
-	return (0);
+_putchar('H');
+_putchar('e');
+_putchar('l');
+_putchar('l');
+_putchar('o');
+_putchar('\n');
+return (0);
 }
