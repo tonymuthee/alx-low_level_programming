@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -18,7 +18,7 @@ r = wildcmp("main.c", "main.c");
 printf("%d\n", r);
 r = wildcmp("main.c", "m*c");
 printf("%d\n", r);
-r = wildcmp("main.c", "ma********************************c");
+r = wildcmp("main.c", "ma*****************************c");
 printf("%d\n", r);
 r = wildcmp("main.c", "*");
 printf("%d\n", r);
