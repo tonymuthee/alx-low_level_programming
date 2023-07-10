@@ -1,46 +1,45 @@
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of your program
- * @ac: argument count
- * @av: argument vector
- * Return: char
+ * argstostr - A function that concatenates all arguments of your program
+ * @ac: number of arguments
+ * @av: array containing arguments
+ * Return: A pointer to string that containing all arguments
+ * or NULL if ac == 0, if av == NULL, or upon failure
  */
-
 char *argstostr(int ac, char **av)
 {
-char *ar, *str;
-int i, j, cont;
+char *new_str;
+int len = 0, i = 0, j, k = 0;
 
-if (ac == 0 || av == NULL)
+if (ac <= 0 || av == NULL)
 return (NULL);
+
+for (; i < ac; i++)
+{
+for (j = 0; av[i][j]; j++)
+len++;
+len++;
+}
+
+len++;
+new_str = malloc(len *sizeof(char));
+if (new_str == NULL)
+return (NULL);
+
 for (i = 0; i < ac; i++)
 {
-j = 0;
-while (av[i][j] != '\0')
+for (j = 0; av[i][j]; j++)
 {
-j++;
-cont++;
+new_str[k] = av[i][j];
+k++;
 }
-cont++;
+new_str[k] = '\n';
+k++;
 }
-cont += 1;
-ar = malloc(cont *sizeof(char));
-if (ar == NULL)
-return (NULL);
-str = ar;
-for (i = 0; i < ac; i++)
-{
-j = 0;
-while (av[i][j] != '\0')
-{
-*ar = av[i][j];
-j++;
-ar++;
-}
-*ar = '\n';
-ar++;
-}
-return (str);
+
+new_str[k] = '\0';
+return (new_str);
 }
 
